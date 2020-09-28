@@ -4,9 +4,28 @@ namespace frågesport
 {
     class Program
     {
+        static int points = 0;
+        static int maxPoints = 3;
         static void Main(string[] args)
         {
-            int points = 0;
+            intro();
+            fraga1();
+            fraga2();
+            fraga3();
+            endPoints();
+        }
+
+        static void intro()
+        {
+            Console.WriteLine("Hej och välkommen till denna frågesport");
+            Console.WriteLine("du kommer få tre frågor och hur många försök du vill på varje fråga");
+            Console.WriteLine("För att svara på frågorna skriver du ordet som du tror är rätt, lycka till!");
+            Console.ReadLine();
+
+            Console.Clear();
+        }
+        static void fraga1()
+        {
             Console.WriteLine("Vilken linje representerar dessa meningar?");
             Console.WriteLine("vi har håltimme nu igen");
             Console.WriteLine("vi har inga läxor närmaste 5 veckorna!");
@@ -17,33 +36,35 @@ namespace frågesport
             points++;
 
             Console.Clear();
-            console.writeline("");
-            console.writeline("");
-            console.writeline("");
-            console.writeline("");
-            console.writeline("");
-            fraga("a", "b", "c", "b");
+        }
+
+        static void fraga2()
+        {
+            Console.WriteLine("Vilken maträtt tror du är min favoriträtt?");
+
+            fraga("carbonara", "tacos", "sushi", "sushi");
             points++;
 
-            string Program = "";
+            Console.Clear();
+        }
 
-/*
-            while (Program != "estet")
-             {
-            Console.WriteLine("Vilken linje representerar dessa meningar?");
-            Console.WriteLine("vi har håltimme nu igen");
-            Console.WriteLine("vi har inga läxor närmaste 5 veckorna!");
-            Console.WriteLine("vill du ha plusmeny på det?");
+        static void fraga3()
+        {
+            Console.WriteLine("Vart kommer lukas ifrån?");
 
-            Console.WriteLine("a = estet");
-            Console.WriteLine("b = el");
-            Console.WriteLine("c = teknik");
+            fraga("kungsbacka", "kungsängen", "kungsfronten", "kungsängen");
+            points++;
 
-            Program = Console.ReadLine();
-             }
-*/
+            Console.Clear();
+        }
+
+        static void endPoints()
+        {
+            Console.WriteLine("grattis, du har klarat denna frågesport.");
+            Console.WriteLine("Jag vet inte hur många försök det tog men det är över nu :)");
             Console.ReadLine();
         }
+        
 
         static void fraga(string a, string b, string c, string inAnswer)
         {
@@ -57,5 +78,7 @@ namespace frågesport
                 inputAnswer = Console.ReadLine();
             }
         }
+
     }
 }
+
